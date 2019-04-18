@@ -7,13 +7,17 @@ const timestamps = require('mongoose-timestamp')
 
 const AlunoSchema = new mongoose.Schema(
     {
-        name: {
+        nome: {
             type: String,
             required: true,
             trim: true,
         },
-        age: {
-            type: Number,
+        endereco: {
+            type: String,
+            required: true,
+        },
+        dtNascimento: {
+            type: Date,
             required: true
         },
         status: {

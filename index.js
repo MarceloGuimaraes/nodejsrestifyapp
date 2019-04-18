@@ -6,7 +6,6 @@ const restify = require('restify')
 const mongoose = require('mongoose')
 const restifyPlugins = require('restify-plugins')
 
-
 /**
   * Initialize Server
  */
@@ -15,7 +14,6 @@ const server = restify.createServer({
 	version: config.version,
 	ignoreTrailingSlash: true
 })
-
 
 /**
   * Middleware
