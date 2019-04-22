@@ -7,11 +7,6 @@ const timestamps = require('mongoose-timestamp')
 
 const AvaliacaoSchema = new mongoose.Schema(
     {
-        nome: {
-            type: String,
-            required: true,
-            trim: true,
-        },
         objetivo: {
             type: String,
             required: true,
