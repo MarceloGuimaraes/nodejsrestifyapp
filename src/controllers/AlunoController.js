@@ -22,7 +22,7 @@ module.exports = {
 	 */
     findById(req, res, next) {
         Aluno.findById(req.params.id)
-            .populate('avaliacao')
+            .populate('avaliacao','diagnostico')
             .then(aluno => {
                 if(aluno) res.json(aluno)
                 else {
