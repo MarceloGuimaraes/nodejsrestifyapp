@@ -5,24 +5,29 @@ const mongoose = require('mongoose')
 const mongooseStringQuery = require('mongoose-string-query')
 const timestamps = require('mongoose-timestamp')
 
-const AlunoSchema = new mongoose.Schema(
+const AvaliacaoSchema = new mongoose.Schema(
     {
         nome: {
             type: String,
             required: true,
             trim: true,
         },
-        telefone: {
+        objetivo: {
             type: String,
             required: true,
         },
-        endereco: {
+        diagnostico: {
             type: String,
-            required: true,
         },
-        dtNascimento: {
-            type: Date,
-            required: true
+        reclamacao: {
+            type: String,
+        },
+        avaliacao: {
+            type: String,
+        },
+        dtAvaliacao: {
+            type: Date, 
+            default: Date.now
         },
         status: {
             type: String,
@@ -34,7 +39,7 @@ const AlunoSchema = new mongoose.Schema(
     { minimize: false, versionKey: false },
 )
 
-AlunoSchema.plugin(timestamps)
-AlunoSchema.plugin(mongooseStringQuery)
+AvaliacaoSchema.plugin(timestamps)
+AvaliacaoSchema.plugin(mongooseStringQuery)
 
-module.exports = mongoose.model('Aluno', AlunoSchema)
+module.exports = mongoose.model('Avaliacao', AvaliacaoSchema)

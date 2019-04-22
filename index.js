@@ -39,6 +39,14 @@ server.listen(config.port, () => {
 	    process.exit(1)
 	});
 
+	console.log(
+		'%s v%s ready to accept connections on port %s in %s environment.',
+		server.name,
+		config.version,
+		config.port,
+		config.env
+)
+
 	db.once('open', () => {
 	    require('./src/routers')(server)
 	    console.log(`Server is listening on port ${config.port}`)
