@@ -24,6 +24,10 @@ const AlunoSchema = new mongoose.Schema(
             type: Date,
             required: true
         },
+        avaliacao:[{
+            type: mongoose.Schema.Types.ObjectId,
+            ref:'Avaliacao'
+        }],
         status: {
             type: String,
 			required: true,
